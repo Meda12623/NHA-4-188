@@ -1,0 +1,38 @@
+Validation accuracy: 0.993
+
+                                                        precision    recall  f1-score   support
+
+                                     Atopic Dermatitis       1.00      1.00      1.00        30
+                            Basal Cell Carcinoma (BCC)       1.00      1.00      1.00        30
+                   Benign Keratosis-like Lesions (BKL)       1.00      1.00      1.00        30
+                                                Eczema       0.97      1.00      0.98        30
+                                 Melanocytic Nevi (NV)       1.00      1.00      1.00        30
+                                              Melanoma       0.97      1.00      0.98        30
+ Psoriasis pictures Lichen Planus and related diseases       1.00      0.97      0.98        30
+          Seborrheic Keratoses and other Benign Tumors       1.00      1.00      1.00        30
+Tinea Ringworm Candidiasis and other Fungal Infections       1.00      0.97      0.98        30
+            Warts Molluscum and other Viral Infections       1.00      1.00      1.00        30
+
+                                              accuracy                           0.99       300
+                                             macro avg       0.99      0.99      0.99       300
+                                          weighted avg       0.99      0.99      0.99       300
+
+
+Test accuracy: 0.980
+
+                                                        precision    recall  f1-score   support
+
+                                     Atopic Dermatitis       1.00      0.97      0.98        30
+                            Basal Cell Carcinoma (BCC)       1.00      1.00      1.00        30
+                   Benign Keratosis-like Lesions (BKL)       0.97      1.00      0.98        30
+                                                Eczema       0.91      1.00      0.95        30
+                                 Melanocytic Nevi (NV)       1.00      0.97      0.98        30
+                                              Melanoma       0.94      1.00      0.97        30
+ Psoriasis pictures Lichen Planus and related diseases       1.00      0.93      0.97        30
+          Seborrheic Keratoses and other Benign Tumors       1.00      0.97      0.98        30
+Tinea Ringworm Candidiasis and other Fungal Infections       1.00      0.97      0.98        30
+            Warts Molluscum and other Viral Infections       1.00      1.00      1.00        30
+
+                                              accuracy                           0.98       300
+                                             macro avg       0.98      0.98      0.98       300
+                                          weighted avg       0.98      0.98      0.98       300

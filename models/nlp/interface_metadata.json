@@ -1,0 +1,31 @@
+{
+  "text_embedding_dim": 768,
+  "embedding_source": "dmis-lab/biobert-base-cased-v1.1 (mean-pooled)",
+  "language_support": "English only",
+  "condition_list": [
+    "Atopic Dermatitis",
+    "Basal Cell Carcinoma (BCC)",
+    "Benign Keratosis-like Lesions (BKL)",
+    "Eczema",
+    "Melanocytic Nevi (NV)",
+    "Melanoma",
+    "Psoriasis pictures Lichen Planus and related diseases",
+    "Seborrheic Keratoses and other Benign Tumors",
+    "Tinea Ringworm Candidiasis and other Fungal Infections",
+    "Warts Molluscum and other Viral Infections"
+  ],
+  "severity_labels": [
+    "mild",
+    "moderate",
+    "severe",
+    "urgent"
+  ],
+  "triage_map": {
+    "mild": "Home Care",
+    "moderate": "Home Care",
+    "severe": "See a Doctor",
+    "urgent": "URGENT"
+  },
+  "test_accuracy": 0.98,
+  "val_accuracy": 0.993
+}
