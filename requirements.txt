@@ -7,3 +7,8 @@ numpy
 matplotlib
 seaborn
 scikit-learn
+transformers
+tokenizers
+huggingface_hub
+scikit-learn
+joblib
