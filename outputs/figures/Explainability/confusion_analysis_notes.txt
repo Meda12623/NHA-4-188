@@ -1,0 +1,21 @@
+
+CONFUSION ANALYSIS — Key Patterns and Likely Causes
+
+1. melanocytic_nevi_nv (moles) is the single largest source of error (126/402, ~31%),
+   most often confused with benign_keratosis_like_lesions_bkl and basal_cell_carcinoma_bcc.
+   Likely cause: all three present as small, roundish pigmented or raised skin lesions.
+   Visual distinction between them often requires dermoscopic detail (border irregularity,
+   pigment network patterns) that may not be strongly captured at this resolution/training scale.
+
+2. A cluster of inflammatory/textured skin conditions shows mutual confusion:
+   psoriasis <-> atopic_dermatitis <-> eczema <-> tinea_ringworm <-> warts_molluscum.
+   Likely cause: these conditions share surface-level visual traits (redness, scaling,
+   raised texture) that overlap significantly across conditions, and this ambiguity is
+   a known challenge in real-world dermatology, not unique to this model.
+
+3. Confusion pairs are largely reciprocal (e.g. bcc <-> bkl, eczema <-> psoriasis),
+   suggesting genuine visual similarity between class pairs rather than random model error.
+
+4. melanoma had the fewest errors (11/402) despite being a high-stakes diagnosis,
+   suggesting the model has learned reasonably distinct visual features for it -
+   worth highlighting as a positive finding in the final report.

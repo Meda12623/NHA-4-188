@@ -1,0 +1,12 @@
+
+CONFIDENCE ANALYSIS — Summary
+
+Average confidence when correct:   96.89%
+Average confidence when incorrect: 80.34%
+
+Total errors: 377
+High-confidence errors (model was >= 90% sure but wrong): 159
+Lower-confidence errors (model showed some hesitation): 218
+
+Interpretation:
+The model tends to be overconfident even when wrong, which is a meaningful risk in a clinical context — confidence scores alone cannot be fully trusted as a signal of correctness.
