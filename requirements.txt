@@ -12,3 +12,4 @@ tokenizers
 huggingface_hub
 scikit-learn
 joblib
+mlflow
