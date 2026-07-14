@@ -27,7 +27,15 @@ def load_nlp_model():
         from transformers import AutoModel
         from transformers import BertModel
 
-        pkl_path = r"C:\Users\jessi\Downloads\NHA-4-188-main (1)\NHA-4-188-main\models\nlp\symptom_classifier_biobert.pkl"
+        import os
+
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        pkl_path = os.path.join(
+            BASE_DIR,
+            "models",
+            "nlp",
+            "symptom_classifier_biobert.pkl"
+        )
         data = joblib.load(pkl_path)
         classifier = data["model"]
 

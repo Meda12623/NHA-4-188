@@ -1,4 +1,5 @@
 # app/streamlit_app.py
+# import config
 import streamlit as st
 from PIL import Image
 import sys
@@ -9,12 +10,14 @@ import importlib.util
 
 # Project Paths and System Setup
 APP_PATH = os.path.dirname(os.path.abspath(__file__))
-SRC_PATH = r"C:\Users\jessi\Downloads\NHA-4-188-main (1)\NHA-4-188-main\src"
-FUSION_PATH = r"C:\Users\jessi\Downloads\skin_project\fusion\fusion"
+PROJECT_ROOT = os.path.dirname(APP_PATH)
 
-sys.path.append(SRC_PATH)
-sys.path.append(APP_PATH)
-sys.path.append(FUSION_PATH)
+SRC_PATH = os.path.join(PROJECT_ROOT, "src")
+FUSION_PATH = os.path.join(SRC_PATH, "Fusion")
+
+sys.path.insert(0, SRC_PATH)
+sys.path.insert(0, APP_PATH)
+sys.path.insert(0, FUSION_PATH)
 
 # Import CV, NLP, and Fusion Modules
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -29,6 +32,8 @@ cv_config_spec = importlib.util.spec_from_file_location(
 )
 config = importlib.util.module_from_spec(cv_config_spec)
 cv_config_spec.loader.exec_module(config)
+
+sys.modules["config"] = config
 
 from model import SkinLesionClassifier
 
@@ -70,7 +75,8 @@ def load_cv_model():
         pretrained=False
     )
     model_path = os.path.join(
-        r"C:\Users\jessi\Downloads\NHA-4-188-main (1)\NHA-4-188-main\models",
+        PROJECT_ROOT,
+        "models",
         "best_model_ResNet50.pt"
     )
     state = torch.load(model_path, map_location=config.DEVICE)
@@ -87,7 +93,12 @@ def load_nlp():
     return classifier, tokenizer, bert_model, use_real
 @st.cache_resource
 def load_fusion():
-    fusion_model_path = os.path.join(FUSION_PATH, "models", "best_fusion_model.pt")
+    fusion_model_path = os.path.join(
+        PROJECT_ROOT,
+        "models",
+        "Fusion",
+        "best_fusion_model.pt"
+    )
     return FusionPredictor(fusion_model_path)
 
 # Image preprocessing pipeline
